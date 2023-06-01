@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TheLatest</title>
+	<!-- Link to Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container mt-5">
+		<div class="text-center">
+		<h1>The Latest</h1>
+		<h3>Paper Summariser</h3>
+		<hr>
+		</div>
+
+		<!-- Form -->
+		<form method="POST">
+			<!-- Drop down menu -->
+			<div class="form-group">
+				<label for="options">Select a Catagory:</label>
+				<select class="form-control" id="options" name="options">
+					{% for option in options %}
+						<option value="{{ option }}">{{ option_labels[options.index(option)] }}</option>
+					{% endfor %}
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="reading">Reading Level:</label>
+				<select class="form-control" id="reading" name="reading">
+					{% for level in levels %}
+						<option value="{{ levels.index(level) }}">{{ level }}</option>
+					{% endfor %}
+				</select>
+			</div>
+
+			<!-- Text box -->
+			<div class="form-group">
+				<label for="input_text">OpenAI Key:</label>
+				<input type="text" class="form-control" id="key" name="key" required>
+			</div>
+			<div class="form-group">
+				<label for="input_text">Enter your email:</label>
+				<input type="email" class="form-control" id="email" name="email">
+			</div>
+			<div class="form-group">
+				<label for="number">Number of Papers:</label>
+				<input type="number" class="form-control" id="number" name="number" aria-describedby="numberHelp" placeholder="10" value="10">
+			</div>
+			<div class="form-group">
+				<label for="length">Length (Sentences):</label>
+				<input type="number" class="form-control" id="length" name="length" aria-describedby="lengthHelp" placeholder="2" value="2">
+			</div>
+
+			<!-- Submit button -->
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+
+	</div>
+
+	<!-- Link to Bootstrap JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TheLatest</title>
+	<!-- Link to Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container mt-5">
+		<h1>Results</h1>
+		<hr>
+		{% for i in range(0, titles|length) %}
+		<div class="row mb-3">
+			<h4><a href="{{ urls[i] }}">{{ titles[i] }}</a></h4>
+			<p>{{ summaries[i] }}</p>
+		</div>
+		{% endfor %}
+
+	</div>
+
+	<!-- Link to Bootstrap JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
