@@ -8,7 +8,7 @@ import openai
 import arxiv 
 import smtplib
 
-openai.api_key = "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"
+openai.api_key = "API-KEY"
 openai.Model.list()
 
 
